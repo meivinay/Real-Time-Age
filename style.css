@@ -5,19 +5,65 @@ body{
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background: #edc0bf;
+    background: #1e2022;
     color: white;
 }
-
+.circle{
+    height: 12rem;
+    width: 13rem;
+    border-radius: 2rem;
+    background: linear-gradient(#e84545, #903749);
+    position: absolute;
+    left: 3rem;
+    top: 5rem;
+    z-index: -1;
+    animation: circleAnimation 5s alternate-reverse infinite linear;
+}
+@keyframes circleAnimation {
+    0%{
+        position: absolute;
+        left: -1rem;
+        top: 5rem;
+        z-index: -1;
+        /* transform: rotate(0deg); */
+    }
+    /* 20%{
+        height: 12rem;
+        width: 13.5rem;
+        border-radius: 2rem;
+        background: linear-gradient(#e84545, #903749);
+        position: absolute;
+        left: 5.5rem;
+        top: 5.5rem;
+        z-index: -1;
+    }
+    40%{
+        height: 9rem;
+        width: 9rem;
+        border-radius: 2rem;
+        background: linear-gradient(#e84545, #903749);
+        position: absolute;
+        left: 23rem;
+        top: 7rem;
+        z-index: -1;
+    } */
+    100%{
+        left: 83rem;
+        top: 5rem; 
+        /* /* transform: rotate(360deg); */
+    }
+    
+}
 .time-container{
-    height: 95%;
+    height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     font-family: 'Orbitron', sans-serif;  
-
+    position: relative;
 }
 input{
     border: 1px green;
@@ -41,9 +87,12 @@ input{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 100%;
-    width: 70%;
+    height: 70%;
+    width: 80%;
     flex-wrap: wrap;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
 }
 .date{
     overflow: hidden;
@@ -53,27 +102,71 @@ input{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: white;
 }
 .year{
     font-size: 7em;
 }
+
+.year:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 3rem;
+    content: "Year";
+}
 .month{
     font-size: 6em;
+}
+.month:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "Month";
 }
 .day{
     font-size: 5em;
 }
+.day:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "Day";
+}
 .hour{
     font-size: 4em;
 }
+.hour:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "Hour";
+}
 .minute{
     font-size: 3em;
+}
+.minute:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "Minute";
 }
 .second{
     font-size: 2em;
     width: 4rem;
 }
+.second:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "Seconds";
+}
 .millisecond{
     font-size: 1em;
     width: 7rem;
+}
+.millisecond:hover::after{
+    position: absolute;
+    top:10rem;
+    font-size: 2rem;
+    content: "ms";
 }
