@@ -9,23 +9,29 @@
       <title>Live Age</title>
 </head>
 <body>
-    <div class="input-container">
-        <div >
-            <input id="birthday-input" type="date" value="1996-09-05"></input>
+    <div class="container">
+        <div class="input-container">
+            <div class="birthday-input" >
+                <input id="birthday-input" type="date" value="1996-09-05"></input>
+            </div>
         </div>
+        <div class="text">
+            <div id="text">Your age is</div>
+        </div>
+        <div class="time-container">
+            <div class="time">
+            <div class="year date"></div>
+            <div class="month date"></div>
+            <div class="day date"></div>
+            <div class="hour date"></div>
+            <div class="minute date"></div>
+            <div class="second date"></div>
+            <div class="millisecond date"></div>
+        </div>
+        <div class="square"></div>
     </div>
-    <h1 style="text-align: center;">Your age is</h1>
-    <div class="time-container">
-        <div class="time">
-        <div class="year date"></div>
-        <div class="month date"></div>
-        <div class="day date"></div>
-        <div class="hour date"></div>
-        <div class="minute date"></div>
-        <div class="second date"></div>
-        <div class="millisecond date"></div>
+    <div class="square2"></div>
     </div>
-    <div class="circle"></div>
 </body>
 <script src="./moment.min.js"></script>
 <script src="./script.js"></script>

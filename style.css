@@ -5,54 +5,55 @@ body{
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background: #edc0bf;
-    background: #1e2022;
+    background: linear-gradient(to right, rgb(45 6 98), #252727);
     color: white;
+    overflow: hidden;
 }
-.circle{
-    height: 12rem;
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.birthday-input{
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.1);;
+}
+
+.square{
+    height: 13rem;
     width: 13rem;
-    border-radius: 2rem;
-    background: linear-gradient(#e84545, #903749);
+    border-radius: 1rem;
+    background: linear-gradient(#420e0e, #ab0404);
     position: absolute;
-    left: 3rem;
-    top: 5rem;
+    left: 1rem;
+    top: -8rem;
     z-index: -1;
-    animation: circleAnimation 5s alternate-reverse infinite linear;
+    animation: squareAnimation 5s alternate-reverse infinite ease-in-out;
 }
-@keyframes circleAnimation {
+.square2{
+    height: 13rem;
+    width: 13rem;
+    border-radius: 1rem;
+    background: linear-gradient(#43a8c6, #082e2a);
+    position: absolute;
+    right: 2rem;
+    bottom: 8rem;
+    z-index: -1;
+    animation: squareAnimation 5s alternate-reverse infinite ease-in-out;
+}
+@keyframes squareAnimation {
     0%{
-        position: absolute;
-        left: -1rem;
-        top: 5rem;
-        z-index: -1;
-        /* transform: rotate(0deg); */
-    }
-    /* 20%{
-        height: 12rem;
-        width: 13.5rem;
-        border-radius: 2rem;
-        background: linear-gradient(#e84545, #903749);
-        position: absolute;
-        left: 5.5rem;
-        top: 5.5rem;
-        z-index: -1;
-    }
-    40%{
-        height: 9rem;
-        width: 9rem;
-        border-radius: 2rem;
-        background: linear-gradient(#e84545, #903749);
-        position: absolute;
-        left: 23rem;
-        top: 7rem;
-        z-index: -1;
-    } */
-    100%{
-        left: 83rem;
-        top: 5rem; 
-        /* /* transform: rotate(360deg); */
-    }
+        transform: translateY(0px);
+      }
+      50%{
+        transform: translateY(20px);
+      }
+      100%{
+        transform: translateY(0px);
+      }
     
 }
 .time-container{
@@ -67,19 +68,44 @@ body{
 }
 input{
     border: 1px green;
-   box-shadow:  0px 0px 4px 3px  #da1aee ;
+    
+}
+#text{
+ font-size: 2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 15px 25px rgba(0,0,0,0.1); */
+ border: 1px solid rgba(255,255,255,0.1);
+ border-radius: 5px;
+     height: 100%;
+    width: 100%;
+} 
+.text{
+    display: inline-block;
+    height: 3rem;
+    width: 15rem;
+    backdrop-filter: blur(2px);
+    color: white;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 .input-container{
-    height: 5%;
-    width: 100%;
+    height: 2rem;
+    width: 12rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 #birthday-input{
     margin-right: 2rem;
-    background-color: #da1aee;
-    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    color:white;
     outline: none;
     border: none;
 }
@@ -92,7 +118,11 @@ input{
     flex-wrap: wrap;
     position: relative;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 1rem;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);;
+    backdrop-filter: blur(12px);
+
 }
 .date{
     overflow: hidden;
@@ -103,14 +133,23 @@ input{
     align-items: center;
     cursor: pointer;
     color: white;
+    height: 6rem;
+    width: 12rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    /* color: black; */
 }
 .year{
     font-size: 7em;
+ 
 }
 
 .year:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 3rem;
     content: "Year";
 }
@@ -119,7 +158,7 @@ input{
 }
 .month:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "Month";
 }
@@ -128,7 +167,7 @@ input{
 }
 .day:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "Day";
 }
@@ -137,7 +176,7 @@ input{
 }
 .hour:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "Hour";
 }
@@ -146,7 +185,7 @@ input{
 }
 .minute:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "Minute";
 }
@@ -156,7 +195,7 @@ input{
 }
 .second:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "Seconds";
 }
@@ -166,7 +205,7 @@ input{
 }
 .millisecond:hover::after{
     position: absolute;
-    top:10rem;
+    top:12rem;
     font-size: 2rem;
     content: "ms";
 }
