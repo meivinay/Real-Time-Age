@@ -7,16 +7,15 @@ let second = document.querySelector(".second")
 let millisecond = document.querySelector(".millisecond");
 let birthDayInput = moment(["1996", 8, 5]); //default birthday  //month is 0 indexed
 let today = moment();                   // today date
-let birthdayInput = document.querySelector("#birthday-input");
+let birthdayInputElem = document.querySelector("#birthday-input");
 // moment are mutable so clone it 
-birthdayInput.addEventListener("change",(e)=>{
+birthdayInputElem.addEventListener("change",(e)=>{
     let inputDate = e.currentTarget.value;
     inputDate = inputDate.split("-");
     inputDate[1] =(inputDate[1]-1)+""; //months are 0 indexed in moment
-    birthDayInput = moment(inputDate);
-   
+    birthDayInput = moment(inputDate); 
 })
-
+// console.log(birthDayInput.format(),"18");
 
 setInterval(() => {
     let YY = getYears(); 
@@ -70,14 +69,18 @@ setInterval(() => {
         if(YY == 1){
             return today.diff(birthdayClone,"months");    
         }
+
+
+
         birthdayClone.subtract(1,"years");
+            
         let lastYearBirthday = birthdayClone;
         let diffInMonths = today.diff(lastYearBirthday,"months");
         if(diffInMonths == 12){
             return 0;
         }
         else{
-            return diffInMonths;
+            return (diffInMonths -12);
         }
         // diffInMonths === 12 ? return (0) : return diffInMonths; 
     }
@@ -85,5 +88,6 @@ setInterval(() => {
         return moment().diff(birthDayInput,"years");
     }
 
-    function getHours(){     
-    }
+
+    // function getHours(){     
+    // }
