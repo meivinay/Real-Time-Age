@@ -79,8 +79,10 @@ setInterval(() => {
         if(diffInMonths == 12){
             return 0;
         }
-        else{
+        else if (diffInMonths - 12 < 0 ){
             return (diffInMonths);
+        } else {
+            return diffInMonths - 12;
         }
         // diffInMonths === 12 ? return (0) : return diffInMonths; 
     }
