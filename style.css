@@ -26,23 +26,20 @@ body{
     height: 13rem;
     width: 13rem;
     border-radius: 1rem;
-    background: linear-gradient(#420e0e, #ab0404);
     position: absolute;
-    left: 1rem;
-    top: -8rem;
     z-index: -1;
     animation: squareAnimation 5s alternate-reverse infinite ease-in-out;
 }
-.square2{
-    height: 13rem;
-    width: 13rem;
-    border-radius: 1rem;
-    background: linear-gradient(#43a8c6, #082e2a);
-    position: absolute;
+
+#square-1 {
+    left: 1rem;
+    top: -8rem;
+    background: linear-gradient(#420e0e, #ab0404);
+}
+#square-2 {
     right: 2rem;
     bottom: 8rem;
-    z-index: -1;
-    animation: squareAnimation 5s alternate-reverse infinite ease-in-out;
+    background: linear-gradient(#43a8c6, #082e2a);
 }
 @keyframes squareAnimation {
     0%{
@@ -208,4 +205,27 @@ input{
     top:12rem;
     font-size: 2rem;
     content: "ms";
+}
+
+@media (max-width : 728px) {
+    .square {
+        height: 5rem;
+        width: 5rem;
+    }
+    .year.date, .month.date, .day.date, .hour.date, .minute.date, .second.date, .millisecond.date {
+        height: fit-content;
+        width: fit-content;
+        font-size: 2em;
+    }
+    .millisecond.date {
+        width: 50%;
+    }
+    .time-container .time::after {
+        content: "Y/M/D/H/M/S/ms";
+    }
+    #birthday-input {
+        color: red;
+        background: rgb(14 68 105 / 86%);
+        font-size: 1.2em;
+    }
 }
